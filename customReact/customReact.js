@@ -4,6 +4,22 @@ function addElement(divref,reactElem){
     // newEle.setAttribute('target',reactElem.props.target)
     // newEle.innerHTML=reactElem.children
     // divref.appendChild(newEle)
+
+
+
+    const newEle=document.createElement(reactElem.type)
+    for (const prop in reactElem.props) {
+       if(prop === 'children')continue;
+        
+        newEle.setAttribute(prop,reactElem.props.prop)
+        
+        
+    }
+    newEle.innerHTML=reactElem.children
+    divref.appendChild(newEle)
+
+
+
 }
 
 const reactElem={
@@ -12,7 +28,7 @@ const reactElem={
         href:'https//google.com',
         target:'manan'
     },
-    children:'Hey i am here'
+    children:'Hey i am hereee'
 }
 
 
